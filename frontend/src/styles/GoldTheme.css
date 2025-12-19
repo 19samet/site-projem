@@ -1,0 +1,220 @@
+/* Gold & White Luxury Theme */
+:root {
+  /* Backgrounds - Light Theme Foundation */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #FAFAFA;
+  --bg-tertiary: #F5F5F5;
+  --bg-overlay: rgba(212, 175, 55, 0.05);
+  
+  /* Text - High Contrast for Light Theme */
+  --text-primary: #1A1A1A;
+  --text-secondary: #4A4A4A;
+  --text-muted: #808080;
+  
+  /* Gold Colors - Premium Palette */
+  --gold-primary: #D4AF37;
+  --gold-light: #F4E4C1;
+  --gold-dark: #B8941E;
+  --gold-metallic: linear-gradient(135deg, #D4AF37 0%, #F4E4C1 50%, #D4AF37 100%);
+  --gold-shine: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.8) 50%, transparent 100%);
+  
+  /* Borders */
+  --border-light: #E5E5E5;
+  --border-gold: #D4AF37;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(212, 175, 55, 0.1);
+  --shadow-md: 0 4px 16px rgba(212, 175, 55, 0.15);
+  --shadow-lg: 0 8px 32px rgba(212, 175, 55, 0.2);
+  --shadow-xl: 0 16px 48px rgba(212, 175, 55, 0.25);
+}
+
+/* Gold Gradient Animation */
+@keyframes goldShine {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes rotate3d {
+  from {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  to {
+    transform: perspective(1000px) rotateY(360deg);
+  }
+}
+
+/* Glass Morphism Effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+}
+
+/* Gold Button Primary */
+.btn-gold-primary {
+  background: var(--gold-metallic);
+  background-size: 200% auto;
+  color: #1A1A1A;
+  border: none;
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gold-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gold-shine);
+  transition: left 0.5s ease;
+}
+
+.btn-gold-primary:hover::before {
+  left: 100%;
+}
+
+.btn-gold-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl);
+}
+
+.btn-gold-primary:active {
+  transform: scale(0.98);
+}
+
+/* Gold Button Secondary */
+.btn-gold-secondary {
+  background: transparent;
+  color: var(--gold-primary);
+  border: 2px solid var(--gold-primary);
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  border-radius: 8px;
+}
+
+.btn-gold-secondary:hover {
+  background: var(--gold-primary);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Floating Animation */
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Fade In Up Animation */
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Scale In Animation */
+.scale-in {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+/* 3D Card Effect */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.card-3d:hover {
+  transform: perspective(1000px) rotateY(5deg) rotateX(5deg);
+}
+
+/* Perspective Image Container */
+.perspective-image {
+  transform: perspective(1000px) rotateY(-8deg) rotateX(3deg);
+  transition: transform 0.6s ease;
+  box-shadow: var(--shadow-xl);
+}
+
+.perspective-image:hover {
+  transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1.05);
+}
+
+/* Gold Accent Line */
+.gold-accent-line {
+  width: 80px;
+  height: 4px;
+  background: var(--gold-metallic);
+  border-radius: 2px;
+  margin: 16px 0;
+}
+
+/* Section Padding */
+.section-padding {
+  padding: 100px 7.6923%;
+}
+
+/* Container */
+.luxury-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 60px 20px;
+  }
+  
+  .btn-gold-primary,
+  .btn-gold-secondary {
+    padding: 14px 24px;
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,85 @@
+/* Performance Optimization CSS */
+
+/* GPU layer promotion for animated elements */
+.gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    will-change: transform;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Optimize font rendering */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Image optimization */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Lazy loading optimization */
+img[loading="lazy"] {
+    content-visibility: auto;
+}
+
+/* Contain layout for better performance */
+.contain-layout {
+    contain: layout;
+}
+
+.contain-paint {
+    contain: paint;
+}
+
+.contain-strict {
+    contain: strict;
+}
+
+/* Improve rendering performance */
+.optimize-rendering {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 500px;
+}
+
+/* Hardware acceleration hints */
+.will-change-transform {
+    will-change: transform;
+}
+
+.will-change-opacity {
+    will-change: opacity;
+}
+
+.will-change-auto {
+    will-change: auto;
+}
+
+/* Disable will-change after animation */
+.animation-complete {
+    will-change: auto;
+}

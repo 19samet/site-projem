@@ -1,0 +1,221 @@
+/* Advanced Animation Library */
+
+/* GPU-accelerated floating animation */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px) translateZ(0);
+  }
+
+  50% {
+    transform: translateY(-20px) translateZ(0);
+  }
+}
+
+/* Subtle pulse animation */
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1) translateZ(0);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05) translateZ(0);
+  }
+}
+
+/* Shimmer effect for loading states */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Gradient animation */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Rotate continuous */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg) translateZ(0);
+  }
+
+  to {
+    transform: rotate(360deg) translateZ(0);
+  }
+}
+
+/* Scale pulse */
+@keyframes scale-pulse {
+
+  0%,
+  100% {
+    transform: scale(1) translateZ(0);
+  }
+
+  50% {
+    transform: scale(1.1) translateZ(0);
+  }
+}
+
+/* Fade in up */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) translateZ(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) translateZ(0);
+  }
+}
+
+/* Slide in from right */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px) translateZ(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) translateZ(0);
+  }
+}
+
+/* Bounce subtle */
+@keyframes bounce-subtle {
+
+  0%,
+  100% {
+    transform: translateY(0) translateZ(0);
+  }
+
+  50% {
+    transform: translateY(-10px) translateZ(0);
+  }
+}
+
+/* Glow effect */
+@keyframes glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
+  }
+}
+
+/* Animation utility classes */
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.pulse-animation {
+  animation: pulse 3s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.gradient-animation {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+  will-change: background-position;
+}
+
+.rotate-animation {
+  animation: rotate 20s linear infinite;
+  will-change: transform;
+}
+
+.glow-animation {
+  animation: glow 2s ease-in-out infinite;
+  will-change: box-shadow;
+}
+
+/* Stagger delay utilities */
+.stagger-1 {
+  animation-delay: 0.1s;
+}
+
+.stagger-2 {
+  animation-delay: 0.2s;
+}
+
+.stagger-3 {
+  animation-delay: 0.3s;
+}
+
+.stagger-4 {
+  animation-delay: 0.4s;
+}
+
+.stagger-5 {
+  animation-delay: 0.5s;
+}
+
+.stagger-6 {
+  animation-delay: 0.6s;
+}
+
+/* Performance optimization */
+.accelerate {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform;
+}
+
+/* Smooth transitions */
+.smooth-transform {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.smooth-all {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Loading Spinners */
+.loader-ring {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(212, 175, 55, 0.2);
+  border-top: 4px solid var(--gold-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
